@@ -26,7 +26,7 @@
     </div>
     <div class="berakoArgazkiak">
         <div class="Tornoa">
-            <div class="argazkia"><img src="../../../public/Argazkiak/tornoa.png" alt=""></div>
+            <div class="argazkia"><a href="../supplier/tornoa.php"><img src="../../../public/Argazkiak/tornoa.png" alt=""></a></div>
             <h1>Tornoa</h1>
         </div>
         <div class="Fresadorea">
