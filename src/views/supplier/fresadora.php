@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7f605dc8fe.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/index.css">
-    <title>Erronka Hasiera</title>
+    <link rel="stylesheet" href="../../css/besteak.css">
+    <title>Fresadora</title>
 </head>
 <body>
-    
     <div class="header">
         <div class="gorakoa">
             <img src="../../../public/Argazkiak/goierri_logo.jpg" alt="">
@@ -19,29 +19,22 @@
                 <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
-        <div class="berakoa">Hizkuntzak</div>
     </div>
-    <div class="erdikoArgazkiak">
-        <img src="../../../public/Argazkiak/edificio_goierri.jpg" alt="">
-    </div>
-    <div class="berakoArgazkiak">
-        <div class="Tornoa">
-            <div class="argazkia"><a href="../supplier/tornoa.php"><img src="../../../public/Argazkiak/tornoa.png" alt=""></a></div>
-            <h1>Tornoa</h1>
-        </div>
-        <div class="Fresadorea">
-            <div class="argazkia"><a href="../supplier/fresadora.php"><img src="../../../public/Argazkiak/fresadora.png" alt=""></a></div>
-            <h1>Fresadora</h1>
-        </div>
-        <div class="Taladroa">
-            <div class="argazkia"><img src="../../../public/Argazkiak/taladroa.png" alt=""></div>
-            <h1>Taladroa</h1>
-        </div>
-        <div class="Esmerila">
-            <div class="argazkia"><img src="../../../public/Argazkiak/esmerila.png" alt=""></div>
-            <h1>Esmerilla</h1>
-        </div>
-    </div>
+    <div class="botoiak">
+        <div class="botoiaTextua"><h1>Fresadora:</h1></div>
+        <button>F-1</button>
+        <button>F-2</button>
+        <button>F-3</button>
+        <button>F-4</button>
+        <button>F-5</button>
+        <button>F-6</button>
+        <button>F-7</button>
+        <button>F-8</button>
+        <button>F-9</button>
+        <button>F-10</button>
+        <button>F-11</button>
+        <button>F-12</button>
+    </div>  
     <div class="footer">
         <div class="argazkiaFooter"><img src="../../../public/Argazkiak/goierri_logo.jpg" alt=""></div>
         <div class="textoFooter">
