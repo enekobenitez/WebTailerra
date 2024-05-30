@@ -9,18 +9,9 @@
 </head>
 <body>
     
-    <div class="header">
-        <div class="gorakoa">
-            <img src="../../../public/Argazkiak/goierri_logo.jpg" alt="">
-            <div class="sareSozialak">
-                <i class="fa-brands fa-facebook"></i>    
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-youtube"></i>
-            </div>
-        </div>
-        <div class="berakoa">Hizkuntzak</div>
-    </div>
+    <?php
+        require_once("../supplier/header.php")
+    ?>
     <div class="erdikoArgazkiak">
         <img src="../../../public/Argazkiak/edificio_goierri.jpg" alt="">
     </div>

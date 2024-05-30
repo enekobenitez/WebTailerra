@@ -9,17 +9,9 @@
     <title>Tornoa</title>
 </head>
 <body>
-    <div class="header">
-        <div class="gorakoa">
-            <img src="../../../public/Argazkiak/goierri_logo.jpg" alt="">
-            <div class="sareSozialak">
-                <i class="fa-brands fa-facebook"></i>    
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-youtube"></i>
-            </div>
-        </div>
-    </div>
+<?php
+        require_once("../supplier/header.php")
+    ?>
     <div class="botoiak">
         <div class="botoiaTextua"><h1>Tornoa:</h1></div>
         <button>T-1</button>
