@@ -1,0 +1,24 @@
+.botoiak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.botoiaTextua {
+    margin-bottom: 20px;
+}
+
+.botoiak button {
+    margin: 5px;
+    padding: 10px 40px; /* Aumenta el padding horizontal para hacer los botones más anchos */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botoiak button:hover {
+    background-color: #ddd;
+}
