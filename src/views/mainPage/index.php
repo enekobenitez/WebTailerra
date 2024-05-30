@@ -42,5 +42,11 @@
             <h1>Esmerilla</h1>
         </div>
     </div>
+    <div class="footer">
+        <div class="argazkiaFooter"><img src="../../../public/Argazkiak/goierri_logo.jpg" alt=""></div>
+        <div class="textoFooter">
+            <p>Arromendia 2, 20240 ORDIZIA (GUIPUZKOA) <br> Tel: (+34)943 88 00 62 <br> email: bulegoa@goierrieskola.eus</p>
+        </div>
+    </div>
 </body>
 </html>
