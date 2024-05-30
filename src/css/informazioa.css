@@ -1,49 +1,57 @@
 table {
-    width: 80%; /* Cambia el ancho al 80% */
+    width: 80%;
     border-collapse: collapse;
-    margin: 20px auto; /* Centra la tabla horizontalmente */
+    margin: 20px auto;
     font-size: 18px;
     text-align: left;
     border: 1px solid #000;
 }
+
 th, td {
     padding: 12px;
     border: 1px solid #000;
 }
+
 th {
     background-color: #c2d69b;
 }
+
 td {
     background-color: #ebf1de;
 }
+
 .osoa2textua {
     display: flex;
-    align-items: flex-start; /* Alinea los elementos al principio */
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .puntoak {
-    flex: 1; /* El contenido de la izquierda ocupa todo el espacio disponible */
+    flex: 1;
     font-size: 30px;
     margin-top: 30px;
 }
 
 .argazkia {
-    margin-left: 20px; /* Agrega espacio entre el texto y la imagen */
+    margin-left: 20px;
+    flex-shrink: 0;
 }
+
 .osoa3 .puntua {
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columnas */
+    flex-direction: column;
 }
 
 .osoa3 .elementua {
     display: flex;
-    align-items: center; /* Alinea elementos verticalmente en el centro */
+    align-items: center;
 }
 
 .osoa3 .elementua img {
-    margin-left: auto; /* Empuja la imagen hacia la derecha */
+    margin-left: auto;
 }
-.osoa4{
+
+.osoa4 {
     font-size: 20px;
 }
 
@@ -56,42 +64,56 @@ td {
     justify-content: space-between;
     align-items: center;
 }
+
 .osoa5 ol {
     margin: 0;
     padding: 0;
     text-align: left;
 }
-.osoa5 img {
-    max-width: 100%;
-    height: auto;
-}
-/* Estilos generales */
-.osoa5 div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.osoa5 ol {
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
+
 .osoa5 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Media query para dispositivos móviles */
+
 @media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .osoa2textua {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .puntoak {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .argazkia {
+        margin: 10px 0;
+        width: 100%;
+        height: auto;
+    }
+
     .osoa5 div {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .osoa5 ol {
-        margin-bottom: 20px; /* Espacio entre la lista y la imagen */
+        margin-bottom: 20px;
     }
+
     .osoa5 img {
-        width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+        width: 100%;
         height: auto;
     }
 }

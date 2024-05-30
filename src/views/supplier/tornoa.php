@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7f605dc8fe.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/besteak.css">
-    <title>Tornoa</title>
-</head>
-<body>
-<?php require_once("../supplier/header.php") ?>
+
+<?php         require_once("../supplier/_parts/head.php")
+ ?>
     <div class="botoiak">
         <div class="botoiaTextua"><h1>Tornoa:</h1></div>
         <button onclick="redirectToInfo('T-1')">T-1</button>

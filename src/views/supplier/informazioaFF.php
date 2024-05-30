@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7f605dc8fe.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/informazioa.css">
-    <title>Fresadora</title>
-</head>
-<body>
-<?php require_once("../supplier/header.php") ?>
+
+<?php         require_once("../supplier/_parts/head.php")
+ ?>
 
 <?php
-    $machineId = isset($_GET['id']) ? $_GET['id'] : 'F-1'; // Default to F-1 if no id is set
+    $machineId = isset($_GET['id']) ? $_GET['id'] : 'F-1'; 
 ?>
 
 <script>

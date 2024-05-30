@@ -11,7 +11,7 @@
 
 .botoiak button {
     margin: 5px;
-    padding: 10px 40px; /* Aumenta el padding horizontal para hacer los botones más anchos */
+    padding: 10px 40px; 
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -21,4 +21,11 @@
 
 .botoiak button:hover {
     background-color: #ddd;
+}
+
+
+@media (max-width: 768px) {
+    .botoiak button {
+        padding: 10px 20px; 
+    }
 }
