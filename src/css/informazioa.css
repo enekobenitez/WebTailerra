@@ -1,0 +1,48 @@
+table {
+    width: 80%; /* Cambia el ancho al 80% */
+    border-collapse: collapse;
+    margin: 20px auto; /* Centra la tabla horizontalmente */
+    font-size: 18px;
+    text-align: left;
+    border: 1px solid #000;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #000;
+}
+th {
+    background-color: #c2d69b;
+}
+td {
+    background-color: #ebf1de;
+}
+.osoa2textua {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al principio */
+}
+
+.puntoak {
+    flex: 1; /* El contenido de la izquierda ocupa todo el espacio disponible */
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.argazkia {
+    margin-left: 20px; /* Agrega espacio entre el texto y la imagen */
+}
+
+.osoa3 .puntua {
+    display: flex;
+    flex-wrap: wrap; /* Para que los elementos se envuelvan en filas */
+    justify-content: space-between; /* Distribuye uniformemente los elementos en el contenedor */
+}
+
+.osoa3 .puntua > div {
+    flex-basis: calc(50% - 10px); /* Divide el contenedor en dos columnas, con un espacio de 10px entre ellas */
+    margin-bottom: 20px; /* Espacio entre los elementos */
+}
+
+.osoa3 .puntua > div img {
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
