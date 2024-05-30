@@ -6,19 +6,19 @@
     <script src="https://kit.fontawesome.com/7f605dc8fe.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/informazioa.css">
-    <title>Tornoa</title>
+    <title>Fresadora</title>
 </head>
 <body>
 <?php require_once("../supplier/header.php") ?>
 
 <?php
-    $machineId = isset($_GET['id']) ? $_GET['id'] : 'T-1'; // Default to T-1 if no id is set
+    $machineId = isset($_GET['id']) ? $_GET['id'] : 'F-1'; // Default to F-1 if no id is set
 ?>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const machineId = "<?php echo $machineId; ?>";
-        document.getElementById("T_Konponketa").innerText = machineId;
+        document.getElementById("F_konponketa").innerText = machineId;
     });
 </script>
 
@@ -28,23 +28,23 @@
         <table borde>
             <tr>
                 <th>Makinaren izendapena</th>
-                <td id="T_Konponketa"><?php echo $machineId; ?></td>
+                <td id="F_konponketa"><?php echo $machineId; ?></td>
             </tr>
             <tr>
                 <th>Marka</th>
-                <td>PINACHO</td>
+                <td>CME</td>
             </tr>
             <tr>
                 <th>Modelo</th>
-                <td>S90/200</td>
+                <td>FU2CMC</td>
             </tr>
             <tr>
                 <th>Fabrikazio Urtea</th>
-                <td></td>
+                <td>1993</td>
             </tr>
             <tr>
                 <th>Erosketa Urtea</th>
-                <td></td>
+                <td>1993</td>
             </tr>
             <tr>
                 <th>Kokapena</th>
@@ -52,7 +52,7 @@
             </tr>
             <tr>
                 <th>Aktibo zenbakia</th>
-                <td></td>
+                <td>128</td>
             </tr>
             <tr>
                 <th>CE marka (Bai/Ez)</th>
@@ -119,38 +119,27 @@
         <div>
             <div>
                 <ol>
-                    <li>Abiadura kaxa</li>
-                    <li>Azinapen kaxa</li>
-                    <li>Orgak</li>
-                    <li>Kontraburua</li>
-                    <li>Balazta</li>
-                    <li>Kota bisuaizadore digitala</li>
-                    <li>Platera</li>
-                    <li>Babesa</li>
+                    <li>Gorputza</li>
+                    <li>Zubia</li>
+                    <li>Erremintza etxearen ardatza</li>
+                    <li>Mentsula</li>
+                    <li>Orga mahi etxea</li>
+                    <li>Mahaia</li>
+                
                 </ol>
             </div>
             <div>
-                <img src="../../../public/Argazkiak/atala.png" alt="">
+                <img src="../../../public/Argazkiak/fresadorea2.png" alt="">
             </div>
         </div>
     </div>
-    <div class="osoa6">
-        <h1>Makinaren detaileak</h1>
-        <div>
-            <ul>
-                <li>Abiadura kaxa</li>
-                <li>Azinapen kaxa</li>
-                <li>Orgak</li>
-                <li>Kontraburua</li>
-            </ul>
-        </div>
-        <img src="../../../public/Argazkiak/makina.png" alt="">
-    </div>
+   
     <div class="osoa7">
         <h1>Erabilpena</h1>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/9_j7Lp-e3PY?si=RU7ZsE5P_fHi3Cc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 </div>
+
 <div class="footer">
     <div class="argazkiaFooter"><img src="../../../public/Argazkiak/goierri_logo.jpg" alt=""></div>
     <div class="textoFooter">
