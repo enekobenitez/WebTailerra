@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gorakoa {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.gorakoa img {
+    width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+.sareSozialak {
+    display: flex;
+    flex-direction: column; /* Los íconos se apilan verticalmente */
+    align-items: flex-end; /* Los íconos se alinean a la derecha */
+}
+
+.sareSozialak i {
+    margin-bottom: 10px; /* Espacio entre los íconos */
+}
+
+.berakoa {
+    width: 50%; /* Ancho del 50% */
+    margin: 0 auto; /* Centra horizontalmente */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 10px;
+}
+
+.erdikoArgazkiak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.erdikoArgazkiak img {
+    max-width: 100%;
+    height: auto; /* Asegura que la imagen mantenga su proporción */
+}
+
+.berakoArgazkiak {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin-top: 20px;
+}
+
+.berakoArgazkiak .argazkia img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+
+.berakoArgazkiak div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.berakoArgazkiak h1 {
+    text-align: center;
+    margin-top: 10px;
+}
