@@ -30,19 +30,38 @@ td {
 .argazkia {
     margin-left: 20px; /* Agrega espacio entre el texto y la imagen */
 }
-
 .osoa3 .puntua {
     display: flex;
-    flex-wrap: wrap; /* Para que los elementos se envuelvan en filas */
-    justify-content: space-between; /* Distribuye uniformemente los elementos en el contenedor */
+    flex-direction: column; /* Coloca los elementos en columnas */
 }
 
-.osoa3 .puntua > div {
-    flex-basis: calc(50% - 10px); /* Divide el contenedor en dos columnas, con un espacio de 10px entre ellas */
-    margin-bottom: 20px; /* Espacio entre los elementos */
+.osoa3 .elementua {
+    display: flex;
+    align-items: center; /* Alinea elementos verticalmente en el centro */
 }
 
-.osoa3 .puntua > div img {
-    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+.osoa3 .elementua img {
+    margin-left: auto; /* Empuja la imagen hacia la derecha */
+}
+.osoa4{
+    font-size: 20px;
+}
+
+.osoa4 .margina {
+    margin-left: 10px;
+}
+
+.osoa5 div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.osoa5 ol {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.osoa5 img {
+    max-width: 100%;
+    height: auto;
 }
