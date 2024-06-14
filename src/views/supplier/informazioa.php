@@ -1,34 +1,75 @@
-
-<?php         require_once("../supplier/_parts/head.php")
- ?>
-
 <?php
-    $machineId = isset($_GET['id']) ? $_GET['id'] : 'T-1'; 
-?>
+require_once ("../supplier/_parts/head.php");
 
+// Conexión a la base de datos (debes ajustar estos valores según tu configuración)
+$servername = "127.0.0.1";
+$username = "root";
+$password = "1WMG2023";
+$database = "mekanizatua";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Obtener el ID de la máquina desde la URL y extraer el número sin el prefijo "T-"
+$machineId = isset($_GET['id']) ? intval(str_replace('T-', '', $_GET['id'])) : 1;
+
+// Realizar la consulta para obtener la información de la máquina
+$sql = "SELECT * FROM makinak WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $machineId);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Verificar si se encontró alguna fila
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $marka = $row['Marka'];
+    $modeloa = $row['Modeloa'];
+    $kokapena = $row['Kokapena'];
+    $CEmarka = $row['CEmarka'];
+    $aktiboZenbakia = $row['AktbZenbakia'];
+} else {
+    // Si no se encuentra la máquina, establecer un valor predeterminado
+    $marka = 'N/A';
+    $modeloa = 'N/A';
+    $kokapena = 'N/A';
+    $CEmarka = 'N/A';
+    $aktiboZenbakia = 'N/A';
+    echo "No se encontraron resultados para el ID: $machineId";
+    // Añadir algún otro manejo de errores si es necesario
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const machineId = "<?php echo $machineId; ?>";
-        document.getElementById("T_Konponketa").innerText = machineId;
+    document.addEventListener("DOMContentLoaded", function () {
+        const machineNumber = "<?php echo $machineNumber; ?>";
+        document.getElementById("T_Konponketa").innerText = machineNumber;
     });
 </script>
 
 <div class="osoa">
-    <h1><?php echo $machineId; ?></h1>
+    <h1><?php echo strtoupper($machineId); ?></h1>
     <div class="osoa1">
         <table borde>
             <tr>
                 <th>Makinaren izendapena</th>
                 <td id="T_Konponketa"><?php echo $machineId; ?></td>
-            </tr>
+                </tr>
             <tr>
-                <th>Marka</th>
-                <td>PINACHO</td>
-            </tr>
-            <tr>
-                <th>Modelo</th>
-                <td>S90/200</td>
-            </tr>
+    <th>Marka</th>
+    <td><?php echo $marka; ?></td>
+</tr>
+<tr>
+    <th>Modeloa</th>
+    <td><?php echo $modeloa; ?></td>
+</tr>
             <tr>
                 <th>Fabrikazio Urtea</th>
                 <td></td>
@@ -38,17 +79,17 @@
                 <td></td>
             </tr>
             <tr>
-                <th>Kokapena</th>
-                <td>107 TAILERRA</td>
-            </tr>
+    <th>Kokapena</th>
+    <td><?php echo $kokapena; ?></td>
+</tr>
+<tr>
+    <th>Aktibo zenbakia</th>
+    <td><?php echo $aktiboZenbakia; ?></td>
+</tr>
             <tr>
-                <th>Aktibo zenbakia</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th>CE marka (Bai/Ez)</th>
-                <td>BAI</td>
-            </tr>
+    <th>CE marka (Bai/Ez)</th>
+    <td><?php echo $CEmarka; ?></td>
+</tr>
             <tr>
                 <th>1215era egokiturik? (Aurrekoa ezezkoa bada)</th>
                 <td></td>
@@ -60,40 +101,115 @@
         </table>
     </div>
     <div class="osoa2">
-        <h1>Babeserako Ekipoak</h1>
         <div class="osoa2textua">
             <div class="puntoak">
                 <ol>
-                    <li>Betaurrekoak</li>
-                    <li>Altzairuzko punta duen segurtasun botak</li>
-                    <li>Txaketa, buzoa edo bata</li>
-                    <li>Eskularruak</li>
-                </ol>
+
+                <?php 
+require_once("../supplier/_parts/head.php");
+
+// Conexión a la base de datos (debes ajustar estos valores según tu configuración)
+$servername = "127.0.0.1";
+$username = "root";
+$password = "1WMG2023";
+$database = "mekanizatua";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Realizar la consulta para obtener la información de los elementos de protección
+$sql = "SELECT * FROM babes_elementuak";
+$result = $conn->query($sql);
+
+// Verificar si se encontraron resultados
+if ($result->num_rows > 0) {
+    // Mostrar los elementos de protección en la lista
+    echo '<div class="osoa2">
+            <h1>Babeserako Ekipoak</h1>
+            <div class="osoa2textua">
+                <div class="puntoak">
+                    <ol>';
+    
+    // Iterar sobre los resultados y mostrar cada elemento en un <li>
+    while($row = $result->fetch_assoc()) {
+        echo '<li>' . $row['Izena'] . '</li>';
+    }
+    
+    echo '          </ol>
+                </div>
+                <div class="argazkia">
+                    <img src="../../../public/Argazkiak/señales.png" alt="">
+                </div>
             </div>
-            <div class="argazkia">
-                <img src="../../../public/Argazkiak/señales.png" alt="">
+        </div>';
+} else {
+    echo "No se encontraron elementos de protección.";
+}
+
+// Cerrar la conexión
+$conn->close();
+?>                </ol>
             </div>
+        
         </div>
     </div>
     <div class="osoa3">
-        <h1>Arriskuak</h1>
         <div class="puntua">
             <div class="elementua">
-                <li>Soinean dugun zerbait, makinaren mugitzen ari den atalen batean korapilatzen: mahukak, lepokoak, hilea</li>
+            <?php 
+require_once("../supplier/_parts/head.php");
+
+// Conexión a la base de datos (debes ajustar estos valores según tu configuración)
+$servername = "127.0.0.1";
+$username = "root";
+$password = "1WMG2023";
+$database = "mekanizatua";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Realizar la consulta para obtener la información de los riesgos
+$sql = "SELECT deskribapena FROM arriskuak";
+$result = $conn->query($sql);
+
+// Verificar si se encontraron resultados
+if ($result->num_rows > 0) {
+    // Mostrar los riesgos en la lista
+    echo '<div class="osoa3">
+            <h1>Arriskuak</h1>
+            <div class="puntua">
+                <div class="elementua">
+                    <ol>';
+    
+    // Iterar sobre los resultados y mostrar cada riesgo en un <li>
+    while($row = $result->fetch_assoc()) {
+        echo '<li>' . $row['deskribapena'] . '</li>';
+    }
+    
+    echo '          </ol>
+                </div>
+            </div>
+            <div class="argazkia">
                 <img src="../../../public/Argazkiak/arriskua1.png" alt="">
             </div>
-            <div class="elementua">
-                <li>Piezen bizarrekin, hertz bizikin, kutxilekin... ebakiak egiteko arriskua</li>
-                <img src="../../../public/Argazkiak/arriskua2.png" alt="">
-            </div>
-            <div class="elementua">
-                <li>Plateretik irteten zerbaitekin kolperen bat hartzen: pieza edo plateraren giltza</li>
-                <img src="../../../public/Argazkiak/arriskua3.png" alt="">
-            </div>
-            <div class="elementua">
-                <li>Irrits egitea lurrean egon daiteken olioarekin</li>
-                <img src="../../../public/Argazkiak/arriskua4.png" alt="">
-            </div>
+        </div>';
+} else {
+    echo "No se encontraron riesgos.";
+}
+
+// Cerrar la conexión
+$conn->close();
+?>            </div>
         </div>
     </div>
     <div class="osoa4">
@@ -139,7 +255,10 @@
     </div>
     <div class="osoa7">
         <h1>Erabilpena</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9_j7Lp-e3PY?si=RU7ZsE5P_fHi3Cc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9_j7Lp-e3PY?si=RU7ZsE5P_fHi3Cc0"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 </div>
 <div class="footer">
@@ -149,4 +268,5 @@
     </div>
 </div>
 </body>
+
 </html>
